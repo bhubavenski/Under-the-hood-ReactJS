@@ -1,6 +1,6 @@
 ## 第 10 部分
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10.svg)
 
 <em>10.0 第十部分 (点击查看大图)</em>
 
@@ -10,7 +10,7 @@
 
 这个事务的类型是 `ReactUpdatesFlushTransaction`，之前我们也说过，我们需要通过事务包装器来理解事务具体干什么。以下是从代码注释中获得的启示：
 
-> ReactUpdatesFlushTransaction 的封装器组会清空 dirtyComponents 数组，并且执行 mount-ready 处理器组压入队列的更新 (mount-ready 处理器是指那些在 mount 成功后触发的生命周期函数。例如 `componentDidUpdate`) 
+> ReactUpdatesFlushTransaction 的封装器组会清空 dirtyComponents 数组，并且执行 mount-ready 处理器组压入队列的更新 (mount-ready 处理器是指那些在 mount 成功后触发的生命周期函数。例如 `componentDidUpdate`)
 
 但是，不管怎样，我们需要证实它。现在有两个 `wrappers`： `NESTED_UPDATES` 和 `UPDATE_QUEUEING`。在初始化的过程中，我们存下步骤 (3) 的 `dirtyComponentsLength`。然后观察下面的 `close` 处，React 在更新过程中会不断检查对比 `dirtyComponentsLength`，当一批脏组件变更了，我们把它们从中数组中移出并再次执行 `flushBatchedUpdates`。 你看, 这里并没有什么黑魔法，每一步都清晰简单。
 
@@ -45,28 +45,26 @@ method -> ReactUpdates.runBatchedUpdates
 
 我们来回顾一下我们学到的。我们再看一下这种模式，然后去掉冗余的部分：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-A.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-A.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-A.svg)
 
 <em>10.1 第 10 部分简化版 (点击查看大图)</em>
 
 让我们适度调整一下：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-B.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-B.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-B.svg)
 
 <em>10.2 第 10 部分重构与简化 (点击查看大图)</em>
 
 很好，实际上，下面的示意图就是我们所讲的。因此，我们可以理解**第 10 部分**的本质，并将其用于最终的 `updating` 方案：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-C.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-C.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/10/part-10-C.svg)
 
 <em>10.3 第 10 部分 本质 (点击查看大图)</em>
 
 完成!
 
-
 [下一节: 第 11 部分>>](./Part-11.md)
 
 [<< 上一节: 第 9 部分](./Part-9.md)
-
 
 [主页](./README.md)

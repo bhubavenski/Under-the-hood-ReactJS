@@ -1,6 +1,6 @@
 ## Part 3
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)
 
 <em>3.0 Part 3 (clickable)</em>
 
@@ -53,14 +53,14 @@ Let’s check the code, just to make sure ;)
 ```javascript
 // \src\renderers\shared\stack\reconciler\ReactCompositeComponent.js#476
 if (inst.componentWillMount) {
-    //..
-    inst.componentWillMount();
+  //..
+  inst.componentWillMount();
 
-    // When mounting, calls to `setState` by `componentWillMount` will set
-    // `this._pendingStateQueue` without triggering a re-render.
-    if (this._pendingStateQueue) {
-        inst.state = this._processPendingState(inst.props, inst.context);
-    }
+  // When mounting, calls to `setState` by `componentWillMount` will set
+  // `this._pendingStateQueue` without triggering a re-render.
+  if (this._pendingStateQueue) {
+    inst.state = this._processPendingState(inst.props, inst.context);
+  }
 }
 ```
 
@@ -70,32 +70,30 @@ Alright, the next thing is to create a React component instance. Erm... what, ag
 
 And, call `mountComponent` on it…
 
-### Alright, we’ve finished *Part 3*.
+### Alright, we’ve finished _Part 3_.
 
 Let’s recap how we got here. Let's look at the scheme one more time, then remove redundant less important pieces, and it becomes this:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)
 
 <em>3.1 Part 3 simplified (clickable)</em>
 
 And we should probably fix spaces and alignment as well:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)
 
 <em>3.2 Part 3 simplified & refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 3* and use it for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take the essential value from _Part 3_ and use it for the final `mounting` scheme:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)
 
 <em>3.3 Part 3 essential value (clickable)</em>
 
 And then we're done!
 
-
 [To the next page: Part 4 >>](./Part-4.md)
 
 [<< To the previous page: Part 2](./Part-2.md)
-
 
 [Home](../../README.md)

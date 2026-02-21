@@ -1,6 +1,6 @@
 ## Part 4
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4.svg)
 
 <em>4.0 Part 4 (clickable)</em>
 
@@ -15,39 +15,36 @@ There are a bunch of wrappers for elements like that, such as `ReactDOMSelect` a
 
 The next validation method is called just to make sure that the internal `props` are set correctly, otherwise it will throw errors. For example, if `props.dangerouslySetInnerHTML` is set (usually we do that when try to insert HTML from a string) and object key `__html` is missed, the next error will be thrown:
 
-> `props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`.  Please visit https://fb.me/react-invariant-dangerously-set-inner-html for more information.
+> `props.dangerouslySetInnerHTML` must be in the form `{__html: ...}`. Please visit https://fb.me/react-invariant-dangerously-set-inner-html for more information.
 
 ### Create HTML element
 
 Then, the actual HTML element will be created (3) by `document.createElement`, which will instantiate the real HTML `div` for us. Before we worked only with virtual representation and now, you can see it for the first time.
 
-
-### Alright, we’ve finished *Part 4*.
+### Alright, we’ve finished _Part 4_.
 
 Let’s recap how we got here. Let's look at the scheme one more time, then remove redundant less important pieces, and it becomes this:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-A.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-A.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-A.svg)
 
 <em>4.1 Part 4 simplified (clickable)</em>
 
 And we should probably fix spaces and alignment as well:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-B.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-B.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-B.svg)
 
 <em>4.2 Part 4 simplified & refactored (clickable)</em>
 
-Nice. In fact, that’s all that happens here. So, we can take the essential value from *Part 4* and use it for the final `mounting` scheme:
+Nice. In fact, that’s all that happens here. So, we can take the essential value from _Part 4_ and use it for the final `mounting` scheme:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-C.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-C.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/4/part-4-C.svg)
 
 <em>4.3 Part 4 essential value (clickable)</em>
 
 And then we're done!
 
-
 [To the next page: Part 5 >>](./Part-5.md)
 
 [<< To the previous page: Part 3](./Part-3.md)
-
 
 [Home](../../README.md)

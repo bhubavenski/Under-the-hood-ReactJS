@@ -1,6 +1,6 @@
 ## 第 11 部分
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11.svg)
 
 <em>11.0 第 11 部分(点击查看大图)</em>
 
@@ -8,7 +8,7 @@
 
 源码中的注释是这样介绍这个方法的：
 
->对一个已经挂载后的组件执行再更新操作的时候，`componentWillReceiveProps` 以及 `shouldComponentUpdate` 方法会被调用，然后 (假定这个更新有效) 调用其他更新中其余的生命周期钩子方法，并且需要变化的 DOM 也会被更新。默认情况下这个过程会使用 React 的渲染和差分对比更新算法。对于一些复杂的实现，客户可能希望重写这步骤。
+> 对一个已经挂载后的组件执行再更新操作的时候，`componentWillReceiveProps` 以及 `shouldComponentUpdate` 方法会被调用，然后 (假定这个更新有效) 调用其他更新中其余的生命周期钩子方法，并且需要变化的 DOM 也会被更新。默认情况下这个过程会使用 React 的渲染和差分对比更新算法。对于一些复杂的实现，客户可能希望重写这步骤。
 
 很好… 听起来很合理。
 
@@ -20,28 +20,26 @@
 
 我们来回顾一下我们学到的。我们再看一下这种模式，然后去掉冗余的部分：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-A.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-A.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-A.svg)
 
 <em>11.1 第 11 部分简化版 (点击查看大图)</em>
 
 然后我们适当再调整一下：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-B.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-B.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-B.svg)
 
 <em>11.2 第 11 部分简化和重构 (点击查看大图)</em>
 
 很好，实际上，下面的示意图就是我们所讲的。因此，我们可以理解**第 11 部分**的本质，并将其用于最终的 `updating` 方案：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/11/part-11-C.svg)
 
 <em>11.3 第 11 部分本质 (点击查看大图)</em>
 
 完成!
 
-
 [下一节: 第 12 部分>>](./Part-12.md)
 
 [<< 上一节: 第 10 部分](./Part-10.md)
-
 
 [主页](./README.md)

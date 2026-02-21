@@ -1,6 +1,6 @@
 ## 第 3 部分
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)
 
 <em>3.0 第 3 部分 (点击查看大图)</em>
 
@@ -38,7 +38,7 @@ inst.updater = updateQueue;
 
 ### 创建 ExampleApplication 实例
 
-通过调用步骤 (3) 的方法  `_constructComponent` 然后经过几个构造方法的作用后，最终创建了 `new ExampleApplication()`。这就是我们代码中构造方法第一次被执行的时机，当然也是我们的代码第一次实际接触到 React 的生态系统，很棒。
+通过调用步骤 (3) 的方法 `_constructComponent` 然后经过几个构造方法的作用后，最终创建了 `new ExampleApplication()`。这就是我们代码中构造方法第一次被执行的时机，当然也是我们的代码第一次实际接触到 React 的生态系统，很棒。
 
 ### 执行首次挂载
 
@@ -53,14 +53,14 @@ inst.updater = updateQueue;
 ```javascript
 // \src\renderers\shared\stack\reconciler\ReactCompositeComponent.js#476
 if (inst.componentWillMount) {
-    //..
-    inst.componentWillMount();
+  //..
+  inst.componentWillMount();
 
-    // 当挂载时, 在 `componentWillMount` 中调用的 `setState` 会执行并改变状态
-    // `this._pendingStateQueue` 不会触发重渲染
-    if (this._pendingStateQueue) {
-        inst.state = this._processPendingState(inst.props, inst.context);
-    }
+  // 当挂载时, 在 `componentWillMount` 中调用的 `setState` 会执行并改变状态
+  // `this._pendingStateQueue` 不会触发重渲染
+  if (this._pendingStateQueue) {
+    inst.state = this._processPendingState(inst.props, inst.context);
+  }
 }
 ```
 
@@ -74,28 +74,26 @@ if (inst.componentWillMount) {
 
 我们来回顾一下我们学到的。我们再看一下这种模式，然后去掉冗余的部分：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)
 
 <em>3.1 第 3 部分简化版 (点击查看大图)</em>
 
 让我们适度在调整一下:
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)
 
 <em>3.2 第 3 部分简化和重构 (点击查看大图)</em>
 
 很好，实际上，下面的示意图就是我们所讲的。因此，我们可以理解**第 3 部分**的本质，并将其用于最终的 `mount` 方案：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)
 
 <em>3.3 第 3 部分本质 (点击查看大图)</em>
 
 完成!
 
-
 [下一节: 第 4 部分 >>](./Part-4.md)
 
 [<< 上一节: 第 2 部分](./Part-2.md)
-
 
 [主页](./README.md)

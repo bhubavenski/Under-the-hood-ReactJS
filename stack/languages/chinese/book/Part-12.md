@@ -1,6 +1,6 @@
 ## 第 12 部分
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12.svg)
 
 <em>12.0 第 12 部分(点击查看大图)</em>
 
@@ -20,23 +20,23 @@
 ///src/renderers/shared/shared/shouldUpdateReactComponent.js#25
 
 function shouldUpdateReactComponent(prevElement, nextElement) {
-    var prevEmpty = prevElement === null || prevElement === false;
-    var nextEmpty = nextElement === null || nextElement === false;
-    if (prevEmpty || nextEmpty) {
-        return prevEmpty === nextEmpty;
-    }
+  var prevEmpty = prevElement === null || prevElement === false;
+  var nextEmpty = nextElement === null || nextElement === false;
+  if (prevEmpty || nextEmpty) {
+    return prevEmpty === nextEmpty;
+  }
 
-    var prevType = typeof prevElement;
-    var nextType = typeof nextElement;
-    if (prevType === 'string' || prevType === 'number') {
-        return (nextType === 'string' || nextType === 'number');
-    } else {
-        return (
-            nextType === 'object' &&
-            prevElement.type === nextElement.type &&
-            prevElement.key === nextElement.key
-        );
-    }
+  var prevType = typeof prevElement;
+  var nextType = typeof nextElement;
+  if (prevType === 'string' || prevType === 'number') {
+    return nextType === 'string' || nextType === 'number';
+  } else {
+    return (
+      nextType === 'object' &&
+      prevElement.type === nextElement.type &&
+      prevElement.key === nextElement.key
+    );
+  }
 }
 ```
 
@@ -46,28 +46,26 @@ function shouldUpdateReactComponent(prevElement, nextElement) {
 
 我们来回顾一下我们学到的。我们再看一下这种模式，然后去掉冗余的部分：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-A.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-A.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-A.svg)
 
-<em>*第 12 部分简化版 (点击查看大图)*</em>
+<em>_第 12 部分简化版 (点击查看大图)_</em>
 
 然后我们适当再调整一下：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-B.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-B.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-B.svg)
 
 <em>12.2 第 12 部分简化和重构 (点击查看大图)</em>
 
 很好，实际上，下面的示意图就是我们所讲的。因此，我们可以理解**第 12 部分**的本质，并将其用于最终的 `updating` 方案：
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-C.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-C.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/12/part-12-C.svg)
 
 <em>12.3 第 12 部分本质 (点击查看大图)</em>
 
 完成!
 
-
 [下一节: 第 13 部分>>](./Part-13.md)
 
 [<< 上一节: 第 11 部分](./Part-11.md)
-
 
 [主页](./README.md)

@@ -1,6 +1,6 @@
 ## 파트 3
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3.svg)
 
 <em>3.0 파트 3 (클릭 가능)</em>
 
@@ -26,7 +26,7 @@
 
 ```javascript
 // \src\renderers\shared\stack\reconciler\ReactCompositeComponent.js #255
-// 이것들은 생성자안에서 설정되어야하지만,  
+// 이것들은 생성자안에서 설정되어야하지만,
 // 좀더 단순한 클래스 추상화의 편의를 위해, 생성자 이후에 설정했다.
 inst.props = publicProps;
 inst.context = publicContext;
@@ -53,14 +53,14 @@ mount(4)를 지나면, 먼저 `componentWillMount`(명시된 경우)가 호출�
 ```javascript
 // \src\renderers\shared\stack\reconciler\ReactCompositeComponent.js #476
 if (inst.componentWillMount) {
-    //..
-    inst.componentWillMount();
+  //..
+  inst.componentWillMount();
 
-    // 마운트 할 때,`componentWillMount`에 의한 `setState`호출은 리렌더링을 하지 않고,
-    // `this._pendingStateQueue`를 설정합니다.
-    if (this._pendingStateQueue) {
-        inst.state = this._processPendingState(inst.props, inst.context);
-    }
+  // 마운트 할 때,`componentWillMount`에 의한 `setState`호출은 리렌더링을 하지 않고,
+  // `this._pendingStateQueue`를 설정합니다.
+  if (this._pendingStateQueue) {
+    inst.state = this._processPendingState(inst.props, inst.context);
+  }
 }
 ```
 
@@ -74,28 +74,26 @@ if (inst.componentWillMount) {
 
 우리가 어떻게 여기까지 왔는지 다시 한번 살펴보도록 합시다. 스키마에서 덜 중요한 부분을 제거하면 다음과 같습니다.
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-A.svg)
 
 <em>3.1 간단히 보는 파트 3 (클릭 가능)</em>
 
 공백제거와 정렬을 통해 보기 좋게 수정했습니다.
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-B.svg)
 
 <em>3.2 간단히 보는 파트 3 리펙토링 버전 (클릭 가능)</em>
 
 좋습니다. 사실, 이것이 여기서 일어나는 일 전부입니다. 이제 *파트 3*의 핵심들을 가지고 최종 `mounting` 스키마에 사용할 수 있습니다.
 
-[![](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)](https://rawgit.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)
+[![](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)](https://raw.githubusercontent.com/Bogdan-Lyashenko/Under-the-hood-ReactJS/master/stack/images/3/part-3-C.svg)
 
 <em>3.3 파트 3의 핵심 (클릭 가능)</em>
 
 그리고 이제 우리는 해냈습니다!
 
-
 [다음 페이지 : 파트 4 >>](./Part-4.md)
 
 [<< 이전 페이지 : 파트 2](./Part-2.md)
-
 
 [홈](../../README.md)
